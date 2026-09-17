@@ -7,14 +7,8 @@ interface UserProviderProps {
 }
 
 export const AuthProvider = ({ children }: UserProviderProps) => {
-    const userD: User = {
-        id: 1,
-        name: "John Doe",
-        email: "john.doe@example.com"
-    }
-
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [user, setUser] = useState<User | undefined>(userD);
+    const [user, setUser] = useState<User | undefined>(undefined);
 
     return (
         <AuthContext.Provider value={{ user, setUser, isLoggedIn, setIsLoggedIn }}>
