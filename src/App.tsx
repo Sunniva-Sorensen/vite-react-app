@@ -1,6 +1,7 @@
 import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/Home/Home";
 import { Article } from "./pages/Article/Article";
+import { AuthProvider } from "./context/AuthProvider";
 
 function AboutPage() {
 	return (
@@ -23,24 +24,26 @@ function ContactPage() {
 function App() {
 	return (
 		<BrowserRouter>
-			<nav className="nav-bar">
-				<Link className="link-button" to="/">
-					Home
-				</Link>
-				<NavLink className="link-button" to="/about">
-					About
-				</NavLink>
-				<NavLink className="link-button" to="/contact">
-					Contact
-				</NavLink>
-			</nav>
+			<AuthProvider>
+				<nav className="nav-bar">
+					<Link className="link-button" to="/">
+						Home
+					</Link>
+					<NavLink className="link-button" to="/about">
+						About
+					</NavLink>
+					<NavLink className="link-button" to="/contact">
+						Contact
+					</NavLink>
+				</nav>
 
-			<Routes>
-				<Route path="/" element={<HomePage />} />
-				<Route path="/about" element={<AboutPage />} />
-				<Route path="/contact" element={<ContactPage />} />
-				<Route path="/article/:slug" element={<Article />} />
-			</Routes>
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					<Route path="/about" element={<AboutPage />} />
+					<Route path="/contact" element={<ContactPage />} />
+					<Route path="/article/:slug" element={<Article />} />
+				</Routes>
+			</AuthProvider>
 		</BrowserRouter>
 	);
 }
