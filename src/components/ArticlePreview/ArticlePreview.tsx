@@ -1,5 +1,6 @@
 import type { Article } from "../../articles";
 import "./ArticlePreview.css";
+import { Link } from "react-router-dom";
 
 interface ArticlePreviewProps {
   article: Article;
@@ -8,14 +9,17 @@ interface ArticlePreviewProps {
 
 export function ArticlePreview({ article, onFavourite }: ArticlePreviewProps) {
   return (
-    <div className="article-preview">
-      <h2>{article.title}</h2>
-      <p>{article.description}</p>
-      <p>By {article.author.username}</p>
-      
-      <button className={`favouriteButton ${article.favorited ? "favorited" : ""}`} onClick={onFavourite}>
-        {article.favorited ? "Unfavourite" : "Favourite"}
-     </button>
-    </div>
+    <Link to={{ pathname: `/article/${article.slug}` }} state={{ article }}
+      className="article-link">
+      <div className="article-preview">
+        <h2>{article.title}</h2>
+        <p>{article.description}</p>
+        <p>By {article.author.username}</p>
+
+        <button className={`favouriteButton ${article.favorited ? "favorited" : ""}`} onClick={onFavourite}>
+          {article.favorited ? "Unfavourite" : "Favourite"}
+        </button>
+      </div>
+    </Link>
   );
 }

@@ -1,5 +1,6 @@
 import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/Home/Home";
+import { Article } from "./pages/Article/Article";
 
 function AboutPage() {
 	return (
@@ -38,6 +39,7 @@ function App() {
 				<Route path="/" element={<HomePage />} />
 				<Route path="/about" element={<AboutPage />} />
 				<Route path="/contact" element={<ContactPage />} />
+				<Route path="/article/:slug" element={<Article />} />
 			</Routes>
 		</BrowserRouter>
 	);
