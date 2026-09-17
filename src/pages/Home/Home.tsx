@@ -36,24 +36,27 @@ export function HomePage() {
   return (
     <>
       <Header />
-      {isLoggedIn ? (
-        <div>
-          <p>Logged in as {user?.name}</p>
-          <button type="button" onClick={handleLogout}>Log out</button>
-        </div>
-      ) : (
-        <form onSubmit={handleLogin}>
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            required
-          />
-          <button type="submit">Log in</button>
-        </form>
-      )}
-      <Button />
+      <div className="home-controls">
+        <Button />
+
+        {isLoggedIn ? (
+          <div className="login-status">
+            <p>Logged in as {user?.name}</p>
+            <button type="button" onClick={handleLogout}>Log out</button>
+          </div>
+        ) : (
+          <form className="login-form" onSubmit={handleLogin}>
+            <label htmlFor="name">Name</label>
+            <input
+              id="name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              required
+            />
+            <button type="submit">Log in</button>
+          </form>
+        )}
+      </div>
 
       <main>
         {articles.map(article => (
