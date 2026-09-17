@@ -1,0 +1,85 @@
+.tip-section {
+  margin-top: 32px;
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.tip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 100%;
+}
+
+.tip-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--heading);
+  font-size: 0.95rem;
+}
+
+.tip-form input,
+.tip-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--heading);
+  background: #fbfcfc;
+}
+
+.tip-form input:focus,
+.tip-form textarea:focus {
+  outline: 3px solid rgba(23, 107, 135, 0.15);
+  border-color: var(--accent);
+}
+
+.tip-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.tip-form button {
+  padding: 10px 16px;
+  border: 0;
+  background: var(--accent);
+  color: white;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.tip-form button:hover {
+  background: var(--accent-dark);
+}
+
+.tip-summary {
+  margin-top: 24px;
+  padding: 16px;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 8px;
+}
+
+.tip-summary h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 520px) {
+  #root {
+    width: min(100% - 20px, 760px);
+  }
+
+  .header {
+    padding-top: 32px;
+  }
+
+  .article-preview,
+  .tip-section {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,57 @@
+.article-preview {
+  padding: 24px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.article-preview h2 {
+  color: var(--heading);
+}
+
+.article-preview p {
+  margin-bottom: 12px;
+}
+
+.article-preview p:last-of-type {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.favouriteButton {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  font-size: 0.9rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.favouriteButton.favorited {
+  color: white;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.favouriteButton:hover,
+.favouriteButton:focus-visible {
+  border-color: var(--accent);
+  background: #d3ebef;
+}
+
+.favouriteButton.favorited:hover,
+.favouriteButton.favorited:focus-visible {
+  background: var(--accent-dark);
+}
+
+.favouriteButton:focus-visible,
+.tip-form button:focus-visible,
+.button:focus-visible {
+  outline: 3px solid rgba(23, 107, 135, 0.25);
+  outline-offset: 2px;
+}
+
+
